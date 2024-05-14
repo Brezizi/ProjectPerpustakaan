@@ -13,6 +13,6 @@
     <?php
         include "header.php";
     ?>
-    <h1 class="font-bold text-gray-900 mx-auto my-5">Welcome To LibraryProject By Leon Team</h1>
+    <h1 class="font-bold text-gray-900 mx-auto my-16 flex flex-warp justify-center">Welcome To LibraryProject By Leon Team</h1>
 </body>
 </html>
