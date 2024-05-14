@@ -9,10 +9,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;700;500;600;700;800;900&family=Montserrat:wght@100;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="font-[inter]">
+<body class="font-[inter] max-w-screen max-h-screen">
+    <!-- Header -->
     <?php
         include "header.php";
     ?>
-    <h1 class="font-bold text-gray-900 mx-auto my-16 flex flex-warp justify-center">Welcome To LibraryProject By Leon Team</h1>
+
+    <!-- Content -->
+    <div class="max-w-screen-xl mx-auto">
+    <div class="w-full">
+        <h1 class="font-bold text-gray-900 text-3xl mx-auto my-16 flex flex-warp justify-center">Welcome To LibraryProject</h1>
+    </div>
+    </div>
+
+    <!-- Footer -->
+    <?php
+        include "footer.php";
+    ?>
 </body>
 </html>
