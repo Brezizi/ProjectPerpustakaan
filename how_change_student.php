@@ -19,7 +19,7 @@ if ($_POST) {
         echo "<script>alert('Gender cannot empty'); location.href='add_siswa.php';</script>";
     } else {
 
-        include_once ('./connect.php');
+        include_once ('connect.php');
 
         if (empty($pass_siswa)){
             $update=pg_query($conn,"update siswa set nisn_siswa='".$nisn_siswa."',nama_siswa='".$nama_siswa."', kelas_siswa='".$kelas_siswa."', jk_siswa='".$jk_siswa."', usn_siswa='".$usn_siswa."', pass_siswa='".md5($pass_siswa)."' where id_siswa = '".$id_siswa."' ");

@@ -1,7 +1,7 @@
 <?php 
     if ($_GET['id_siswa']) {
 
-        include_once('./connect.php');
+        include_once('connect.php');
 
         $qry_delete=pg_query($conn,"delete from siswa where id_siswa='".$_GET['id_siswa']."'");
 
