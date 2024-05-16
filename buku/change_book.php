@@ -7,56 +7,25 @@
 <body>
     <?php 
     include_once('./connect.php');
-    $qry_get_buku=pg_query($conn,"select * from siswa where 
+    $qry_get_buku=pg_query($conn,"select * from buku where 
 kd_buku = '".$_GET['kd_buku']."'");
     $data_buku=pg_fetch_assoc($qry_get_buku);
     ?>
     <h3>Ubah buku</h3>
-    <form action="proces_update_buku.php" method="post">
+    <form action="howto_change_book.php" method="post">
         <input type="hidden" name="kd_buku" value= 
   "<?=$data_buku['kd_buku']?>">
         judul buku :
   <input type="text" name="judul_buku" value=   "<?=$data_buku['judul_buku']?>" class="form-control">
         tahun buku : 
-  <input type="date" name="tahun_buku" value="<?=$data_buku['tahun_buku']?>" class="form-control">
-        Gender buku: 
-        <?php 
-        $arr_gender=array('L'=>'Laki-laki','P'=>'Perempuan');
-        ?>
-        <select name="gender" class="form-control">
-            <option></option>
-            <?php foreach ($arr_gender as $key_gender => $val_gender):
-                if($key_gender==$dt_siswa['gender']){
-                    $selek="selected";
-                } else {
-                    $selek="";
-                }
-             ?>
-<option value="<?=$key_gender?>" <?=$selek?>><?=$val_gender?></option>
-            <?php endforeach ?>
-        </select>
-        Alamat : 
-<textarea name="alamat" class="form-control" rows="4"><?=$dt_siswa['alamat']?></textarea>
-        Kelas :
-        <select name="id_kelas" class="form-control">
-            <option></option>
-            <?php 
-            $qry_kelas=pg_query($conn,"select * from kelas");
-            while($data_kelas=pg_fetch_assoc($qry_kelas)){
-                if($data_kelas['id_kelas']==$dt_siswa['id_kelas']){
-                    $selek="selected";
-                } else {
-                    $selek="";
-                }
-echo '<option value="'.$data_kelas['id_kelas'].'" '.$selek.'>'.$data_kelas['nama_kelas'].'</option>';   
-            }
-            ?>
-        </select>
-        Username : 
-<input type="text" name="username" value="<?=$dt_siswa['username']?>" class="form-control">
-        Password : 
-<input type="password" name="password" value="" class="form-control">
-<input type="submit" name="simpan" value="Ubah Siswa" class="btn btn-primary">
+  <input type="text" name="tahun_buku" value="<?=$data_buku['tahun_buku']?>" class="form-control">
+        stok buku : 
+  <input type="number" name="stok_buku" value="<?=$data_buku['stok_buku']?>" class="form-control">
+        pengarang buku : 
+  <input type="text" name="pengarang_buku" value="<?=$data_buku['pengarang_buku']?>" class="form-control">
+        penerbit buku : 
+  <input type="text" name="penerbit_buku" value="<?=$data_buku['penerbit_buku']?>" class="form-control">
+<input type="submit" name="simpan" value="Ubah Buku" class="btn btn-primary">
     </form>
 
 
